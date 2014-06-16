@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rehberim>
+  <yoneticim>
+    <kullaniciad>admin</kullaniciad>
+    <sifre>123</sifre>
+  </yoneticim>
+  <musterim>
+    <id>1</id>
+    <adsoyad>Hüseyin ZENGİN</adsoyad>
+    <telefon>0555 555 55 55</telefon>
+    <eposta>huseyinzengin91@gmail.com</eposta>
+    <adres>Ankara</adres>
+    <not>Bu alana not girilir</not>
+    <meslek>Yazılımcı</meslek>
+    <tarih>14.9.2013</tarih>
+    <durum>false</durum>
+    <gorusme>true</gorusme>
+    <egitim>false</egitim>
+  </musterim>
+  <musterim>
+    <id>2</id>
+    <adsoyad>kişi 2</adsoyad>
+    <telefon>0544 444 44 44</telefon>
+    <eposta>kisi2@hotmail.com</eposta>
+    <adres>İstanbul</adres>
+    <not>Not girilir bu alana not!</not>
+    <meslek>yok</meslek>
+    <tarih>14.9.2013</tarih>
+    <durum>false</durum>
+    <gorusme>false</gorusme>
+    <egitim>false</egitim>
+  </musterim>
+</rehberim>

@@ -1,0 +1,55 @@
+﻿@model RehberYS.Models.Giris
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Yüksek Yapılı Zekalar Rehber</title>
+ 
+    @Scripts.Render("~/bundles/jquery")
+    
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/modernizr")
+    
+
+    <link href="~/Content/login.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <div class="giris">
+        
+    @using (Html.BeginForm("Index","Home",FormMethod.Post))
+    {
+        @Html.ValidationSummary(true)
+    
+        <table>
+        <tr>
+            <td>Yönetici Adı:</td>
+            <td>
+                @Html.EditorFor(model => model.KullaniciAd)<br />
+                @Html.ValidationMessageFor(model => model.KullaniciAd)
+
+            </td>
+        </tr>
+        <tr>
+            <td>Şifre:</td>
+            <td>
+                @Html.PasswordFor(model => model.Sifre)<br />
+                @Html.ValidationMessageFor(model => model.Sifre)
+
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Giriş Yap" /></td>
+        </tr>
+    </table>
+    
+    }
+    </div>
+</body>
+</html>

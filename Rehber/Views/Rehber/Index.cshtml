@@ -1,0 +1,152 @@
+﻿@model IEnumerable<RehberYS.Models.Rehber>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        var id;
+        var yol = "z";
+        var yol2;
+        $('#btn_edit').click(function() {
+
+            if (yol != "z") {
+                window.location = yol;
+            }
+            
+        })
+        
+        $('#btn_delete').click(function () {
+            id = $('#m_id').val();
+            yol2 = 'http://localhost:7374/Rehber/Delete/' + id;
+            if (id != "") {
+                window.location = yol2;
+            }
+        })
+
+        $('.a_lnk').click(function() {
+            id = $(this).attr("id");
+            
+
+            $.ajax({
+                url: 'http://localhost:7374/Rehber/Details2?',
+                type: "GET",
+                data: 'id='+id,
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                success: function (cevap) {
+                    $('#m_id').val(cevap.Id);
+                    $('#m_adsoyad').text(cevap.AdSoyad);
+                    $('#m_telefon').text(cevap.Telefon);
+                    $('#m_eposta').text(cevap.Eposta);
+                    $('#m_meslek').text(cevap.Meslek);
+                    $('#m_adres').text(cevap.Adres);
+                    $('#m_not').text(cevap.Not);
+                    yol = 'http://localhost:7374/Rehber/Edit/' + cevap.Id;
+
+                    if (cevap.Egitim == true) {
+                        $('#m_egitim').attr('checked', 'checked')
+                    } else {
+                        $('#m_egitim').removeAttr('checked')
+                    }
+                    if (cevap.Gorusme == true) {
+                        $('#m_gorusme').attr('checked', 'checked')
+                    } else {
+                        $('#m_gorusme').removeAttr('checked')
+                    }
+                    if (cevap.Durum == true) {
+                        $('#m_durum').attr('checked', 'checked')
+                    } else {
+                        $('#m_durum').removeAttr('checked')
+                    }
+                }
+
+            })
+            return false;
+        })
+
+    })
+</script>
+
+<div class="top_div">
+    <div class="nav">
+    @Html.ActionLink("Create New", "Create",null,new{@Class="a_btn_ust"})
+    @Html.ActionLink("Log Out", "LogOut",null,new{@Class="a_btn_ust"})
+    </div>
+</div>
+        
+<div class="left_div">
+    <table class="tbl_list">
+        <tr>
+            <th style="width:175px;">Ad Soyad</th>
+            <th style="width:100px;">Telefon</th>
+            <th>Eposta</th>
+            <th>Tarih</th>
+            <th>E</th>
+            <th>G</th>
+            <th>D</th>
+        </tr>
+                
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="width:175px;"><a href="#" id="@item.Id" class="a_lnk">@item.AdSoyad</a></td>
+                <td style="width:110px;">@item.Telefon</td>
+                <td>@item.Eposta</td>
+                <td>@item.Tarih</td>
+                <td>@Html.DisplayFor(z=>item.Egitim)</td>
+                <td>@Html.DisplayFor(z=>item.Gorusme)</td>
+                <td>@Html.DisplayFor(z=>item.Durum)</td>
+            </tr>
+        }
+                
+                
+    </table>
+            
+    <div style="width: 680px; padding: 5px;">
+        @for (int i = 1; i <= ViewBag.Sayfalar; i++)
+            {
+                if (Request.QueryString["page"] == i.ToString())
+                {
+                    <a href="~/Rehber/Index/?page=@i" class="a_sayfalama_aktif">@i</a>
+                }
+                else
+                {
+                    <a href="~/Rehber/Index/?page=@i" class="a_sayfalama">@i</a>
+                }
+                    
+                    
+            }
+    </div>
+            
+</div>
+        
+<div class="right_div">
+    <div class="sag_baslik"> Müşteri Bilgileri</div>
+    @using (Html.BeginForm("Edit","Rehber",FormMethod.Post))
+{
+    <input id="m_id" type="hidden" value=""/>
+    <div class="sag_icerik">
+            
+        <div id="m_adsoyad" class="s_out"></div>
+        <div id="m_telefon" class="s_out"></div>
+        <div id="m_eposta" class="s_out"></div>
+        <div id="m_meslek" class="s_out"></div>
+        <textarea id="m_adres" class="b_out" style="height: 30px;">
+        </textarea>
+        <div class="s_out">
+            Eğitim <input id="m_egitim" type="checkbox"/>
+            Görüşme <input id="m_gorusme" type="checkbox"/>
+            Durum <input id="m_durum" type="checkbox"/>
+            
+        </div>
+                
+        <textarea id="m_not" class="b_out"  style="height: 180px;">
+        </textarea>
+        <a href="#" id="btn_edit" class="a_sag_btn" title="">Edit</a>
+        <a href="#" id="btn_delete" class="a_sag_btn" title="">Delete</a>
+    </div>
+}
+</div>

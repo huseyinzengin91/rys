@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rehberim>
+  <yoneticim>
+    <kullaniciad>zengin</kullaniciad>
+    <sifre>24</sifre>
+  </yoneticim>
+  <yoneticim>
+    <kullaniciad>basar</kullaniciad>
+    <sifre>oztas</sifre>
+  </yoneticim>
+  <musterim>
+    <id>1</id>
+    <adsoyad>Fisun PAMUK</adsoyad>
+    <telefon>0505 274 83 70</telefon>
+    <eposta>neeey</eposta>
+    <adres>Ankara</adres>
+    <not>3.5 4 yaşında bir çocuğu var. İleriye dönük nasıl bir eğitim alabilir diye görüşmeye gelecek.</not>
+    <meslek>asds2</meslek>
+    <tarih>14.9.2013</tarih>
+    <durum>false</durum>
+    <gorusme>true</gorusme>
+    <egitim>false</egitim>
+  </musterim>
+  <musterim>
+    <id>2</id>
+    <adsoyad>İsa</adsoyad>
+    <telefon>0505 629 44 84</telefon>
+    <eposta>havvaisa06@hotmail.com</eposta>
+    <adres>Yenikent/Ankara222</adres>
+    <not>Kızının eğitimini 99 TL'den yapabilir miyiz onu soruyorlar? Yapılabiliyorsa gelecekler.</not>
+    <meslek>yok</meslek>
+    <tarih>14.9.2013</tarih>
+    <durum>false</durum>
+    <gorusme>false</gorusme>
+    <egitim>false</egitim>
+  </musterim>
+</rehberim>

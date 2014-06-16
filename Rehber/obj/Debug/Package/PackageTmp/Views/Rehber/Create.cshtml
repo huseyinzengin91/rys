@@ -1,0 +1,101 @@
+﻿@model RehberYS.Models.Rehber
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Kişi Ekle</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AdSoyad)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.AdSoyad,null,new{@Class="s_out"})
+            @Html.ValidationMessageFor(model => model.AdSoyad)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Telefon)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Telefon,null,new{@Class="s_out"})
+            @Html.ValidationMessageFor(model => model.Telefon)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Eposta)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Eposta,null,new{@Class="s_out"})
+            @Html.ValidationMessageFor(model => model.Eposta)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Adres)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Adres,new{@Class="b_out", Style="width:900px; height: 60px;"})
+            @Html.ValidationMessageFor(model => model.Adres)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Not)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Not,new{@Class="b_out", Style="width:900px; height: 60px;"})
+            @Html.ValidationMessageFor(model => model.Not)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Meslek)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Meslek,null,new{@Class="s_out"})
+            @Html.ValidationMessageFor(model => model.Meslek)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Tarih)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Tarih,null,new{@Class="s_out"})
+            @Html.ValidationMessageFor(model => model.Tarih)
+        </div>
+        <div class="editor-label">
+            
+            @Html.LabelFor(model => model.Egitim)
+            : 
+            @Html.EditorFor(model => model.Egitim)
+            @Html.ValidationMessageFor(model => model.Egitim)
+             
+            @Html.LabelFor(model => model.Gorusme)
+            : 
+            @Html.EditorFor(model => model.Gorusme)
+            @Html.ValidationMessageFor(model => model.Gorusme)
+
+            @Html.LabelFor(model => model.Durum)
+            : 
+            @Html.EditorFor(model => model.Durum)
+            @Html.ValidationMessageFor(model => model.Durum)
+
+        </div>
+        <div class="editor-field">
+            
+        </div>
+
+        <p>
+            <input type="submit" value="Create" class="a_sag_btn" style="height: auto"/>
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

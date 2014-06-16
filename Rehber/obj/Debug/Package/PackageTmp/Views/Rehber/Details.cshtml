@@ -1,0 +1,71 @@
+﻿@model RehberYS.Models.Rehber
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>Detail</h2>
+
+<fieldset>
+    <legend>Rehber</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AdSoyad)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AdSoyad)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Telefon)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Telefon)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Eposta)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Eposta)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Adres)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Adres)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Not)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Not)
+    </div>
+    
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Meslek)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Meslek)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Tarih)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tarih)
+    </div>
+    
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Durum)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Durum)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
